@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="pad">
-        <div class="screen"> </div>
+        <div class="screen"></div>
         <div class="keyboard">
             <div class = 'row'>
-                <button class="special">C</button>
-                <button class="special">+/-</button>
-                <button class="special">%</button>
-                <button class="operator">+</button>
+                <button class="special" id="clear">C</button>
+                <button class="special" id="backspace">⌫</button>
+                <button class="special" id="negate">+/-</button>
+                <button class="operator">/</button>
             </div>
             <div class = 'row'>
                 <button class="num">7</button>
@@ -41,17 +42,5 @@
             </div>            
         </div>
     </div>
-    <script>
-        const btns=document.querySelectorAll('button');
-        const screen=document.querySelector('.screen');
-        btns.forEach(button =>{
-            button.style.opacity=1;
-            button.addEventListener('click',e=>(screen.textContent+=e.target.textContent));
-            button.addEventListener('mousedown',e=>(e.target.style.opacity-=0.3));
-            button.addEventListener('mouseup',e=>(e.target.style.opacity=1));
-        })
-
-    </script>
-
 </body>
 </html>
