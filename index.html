@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="pad">
+        <div class="screen"> </div>
+        <div class="keyboard">
+            <div class = 'row'>
+                <button class="special">C</button>
+                <button class="special">+/-</button>
+                <button class="special">%</button>
+                <button class="operator">+</button>
+            </div>
+            <div class = 'row'>
+                <button class="num">7</button>
+                <button class="num">8</button>
+                <button class="num">9</button>
+                <button class="operator">×</button>
+            </div>
+            <div class = 'row'>
+                <button class="num">4</button>
+                <button class="num">5</button>
+                <button class="num">6</button>
+                <button class="operator">-</button>
+            </div>
+            <div class = 'row'>
+                <button class="num">1</button>
+                <button class="num">2</button>
+                <button class="num">3</button>
+                <button class="operator">+</button>
+            </div>
+            <div class = 'row'>
+                <button class="num" id="zero">0</button>
+                <button class="num">.</button>
+                <button class="operator">=</button>     
+            </div>            
+        </div>
+    </div>
+    <script>
+        const btns=document.querySelectorAll('button');
+        const screen=document.querySelector('.screen');
+        btns.forEach(button =>{
+            button.style.opacity=1;
+            button.addEventListener('click',e=>(screen.textContent+=e.target.textContent));
+            button.addEventListener('mousedown',e=>(e.target.style.opacity-=0.3));
+            button.addEventListener('mouseup',e=>(e.target.style.opacity=1));
+        })
+
+    </script>
+
+</body>
+</html>
